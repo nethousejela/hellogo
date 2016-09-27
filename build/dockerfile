@@ -1,4 +1,7 @@
 FROM scratch
+
+ADD build.sh /
+
 WORKDIR /app
 COPY hello /app/
 EXPOSE 8080
