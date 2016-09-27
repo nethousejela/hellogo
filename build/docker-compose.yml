@@ -1,0 +1,21 @@
+web:
+  image: nethousejela/hellogo
+  environment:
+   - HOST=db
+   - PORT=5984
+
+  links:
+   - couchdb:db
+  expose:
+   - 8080
+  ports:
+   - 8080:8080
+
+couchdb:
+  image: klaemo/couchdb
+  volumes:
+        - data:/usr/local/var/lib/couchdb
+  expose:
+   - 5984
+  ports:
+    - 5984:5984
